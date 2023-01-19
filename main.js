@@ -28,58 +28,28 @@ const showGifts = async (e) =>{
         template+= `<img width="100px" height="100px" src="${url}"/>`
 
 
+        
     });
 
-    paste.innerHTML =template
+    
+    paste.innerHTML= template;
 
+
+
+}
+//random will be when I change my page
+const random = async () =>{
+    let URL= `${END_POINT_RANDOM}?api_key=${MY_API_KEY}`;
+    const response = await fetch(URL);
+    const element = await response.json();
+    console.log(element)
+    const {url} = element.data.images.original;
+
+    paste.innerHTML= `<img width="100%" height="100p%" class= "p-3 m-1 img-thumbnail" src="${url}" alt="img-random"/>`;
 
 }
 form.addEventListener("submit", showGifts);
+document.addEventListener("DOMContentLoaded", random );
 
 
 
-
-
-
-
-
-
-/*
-const url ='https://api.giphy.com/v1/gifs/search';
-let busqueda = "?q=";
-const key ='&api_key=LubDDF2EJwRpbDJy6aHJpc1NbUAP5WSa';
-const limite = "&limit=25";
-
-let q="";
-
-let urlCompleta ="";
-//urlCompleta = url + busqueda + q + key + limite; //esta se supone es mi url completa, puede cambiar o variar XD
-const btn = document.getElementById('btn');  s
-
-btn.onclick = () =>{
-    document.getElementById("portfolio").innerHTML ="";
-    q = document.getElementById('search').value;
-    urlCompleta = url + search + q + key + limite;
-    getData();
-}
-//obtener info
-
-const getData = async() =>{
-    await fetch(urlCompleta).then((response) =>{
-        return response.json();
-    }).then((giphy) =>{
-        console.log(giphy);
-    
-    for(let i= 0; i< giphy.data.length; i++){
-
-        const gif = document.createElement('img');
-        gif.src =giphy.data[i].images["original"].url;  //para acceder a la fotografia en esa posicion dentro de los datos
-        gif.className = "mb-3";
-        Document.getElementById("portfolio").appendChild(gif);
-    }
-    })
-}
-
-getData();
-
-*/
