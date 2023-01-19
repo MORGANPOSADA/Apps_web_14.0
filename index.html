@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practica_1_MAPE</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://unpkg.com/feather-icons"></script>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid"> <!--Es mi contenedor para que este mas centrado-->
+          <img src="https://i.pinimg.com/originals/49/93/10/499310bfae5a830273b2e23a926d984f.gif" alt="Logo GIPHY" width="100">  <!--tengo la img de mi logo-->
+    
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" id= "btn_busqueda" aria-current="page" href="#"> <i data-feather="search"></i> &nbsp;Buscar GIF</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="#"> <i data-feather="gift"></i> &nbsp;Random GIF</a>
+              </li>
+          </div>
+        </div>
+      </nav>
+
+      <div class="container-fluid mt-5">
+        <div class="row">
+            <div class="col">
+            <form>
+                <div class="form-row form-group">
+                    <!--<label for="search">Buscar GIF</label>-->
+                    <input type="text" id="search" class="form-control" placeholder="Búsqueda de Gifs..."/>
+                    <button type="button" id="btn" class="btn btn-primary">Buscar</button>
+                </div>
+            </form>
+            </div>
+            <div class="col">
+            </div>
+        </div>
+      </div>
+
+      <div class="container mt-5">
+        <div id="portfolio" class="row row-cols-1 row-cols-3 row-cols-lg-4">
+
+        </div>
+
+      </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+
+    <script type="text/javascript" src="./main.js"></script>
+   <!--
+    <script>
+        feather.replace();
+        const API_KEY = 'LubDDF2EJwRpbDJy6aHJpc1NbUAP5WSa';
+        const inputSearch = document.getElementById('search');
+        inputSearch.onkeyup = async (event) => {
+            even.preventDefault();
+            if (event.keyCode !== 13) return;
+                const response = await fetch(
+                    'api.giphy.com/v1/gifs/search?api_key=${API_KEY}
+                    &q=${inputSearch.value}'
+        );
+            const data = await response.json();
+            console.log(data);
+        };
+        </script>
+        --> 
+      
+</body>
+</html>
