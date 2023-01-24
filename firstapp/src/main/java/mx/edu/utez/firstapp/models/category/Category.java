@@ -29,4 +29,6 @@ public class Category {
     @JsonIgnore
     private List<Subcategory> subcategories;
 
+
+
 }

@@ -4,9 +4,11 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import mx.edu.utez.firstapp.models.Role.Role;
 import mx.edu.utez.firstapp.models.person.Person;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity //we have a table in mi bd , but i need an id
 @Table(name ="users")
@@ -33,6 +35,8 @@ public class User {
     private Person person;
 
 
+    @ManyToMany (mappedBy = "users")
+    private Set<Role> roles;
 
 
 }
